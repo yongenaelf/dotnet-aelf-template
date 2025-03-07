@@ -19,7 +19,7 @@ jobs:
       - id: templates
         run: | 
           templates=`dotnet new list aelf | grep '\[C#\]' | awk -F '  +' '{print $2}' | paste -sd ','`
-          echo "templates=[\"${templates//', '/\",\"}\"]" >> $GITHUB_OUTPUT
+          echo "templates=[\"${templates//','/\",\"}\"]" >> $GITHUB_OUTPUT
 
   job2:
     runs-on: ubuntu-latest
