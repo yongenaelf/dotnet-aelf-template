@@ -28,4 +28,6 @@ jobs:
       matrix:
         templates: ${{ fromJSON(needs.job1.outputs.templates) }}
     steps:
-      - run: dotnet new ${{ matrix.templates }} -n HelloWorld
+      - run: |
+          dotnet new install AElf.ContractTemplates
+          dotnet new ${{ matrix.templates }} -n HelloWorld
