@@ -23,5 +23,5 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
-      - run: dotnet new --install AElf.ContractTemplates
+      - run: dotnet new install AElf.ContractTemplates
       - run: dotnet new list aelf | grep '\[C#\]' | awk -F '  +' '{print $2}' | paste -sd ','
