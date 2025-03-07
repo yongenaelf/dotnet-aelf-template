@@ -26,6 +26,6 @@ jobs:
     needs: [job1]
     strategy:
       matrix:
-        templates: ${{ needs.job1.outputs.templates }}
+        templates: ${{ fromJSON(needs.job1.outputs.templates) }}
     steps:
       - run: echo "Matrix - Project ${{ matrix.templates }}"
