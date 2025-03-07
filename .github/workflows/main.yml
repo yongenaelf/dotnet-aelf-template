@@ -28,4 +28,4 @@ jobs:
       matrix:
         templates: ${{ fromJSON(needs.job1.outputs.templates) }}
     steps:
-      - run: echo "Matrix - Project ${{ matrix.templates }}"
+      - run: dotnet new ${{ matrix.templates }} -n HelloWorld
